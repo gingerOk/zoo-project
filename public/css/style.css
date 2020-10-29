@@ -1,3 +1,7 @@
+.header_image {
+    height: 95vh;
+}
+
 .card-title_custom {
     background-color: #000;
     opacity: 0.8;
@@ -24,3 +28,10 @@
     transform: translateY(-10%);
     }
 
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }

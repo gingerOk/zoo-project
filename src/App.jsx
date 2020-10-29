@@ -1,12 +1,15 @@
-import {animals} from './data'
 import FactsBlock from './components/FactsBlock'
+import TopNavigation from './components/TopNavigation'
+import HeaderImage from './components/HeaderImage'
 
 function App() {
 
   return (
-    <div className="container">
-        <FactsBlock />
-    </div>
+    <>
+      <TopNavigation />
+      <HeaderImage />
+      <FactsBlock />
+    </>
   );
 }
 
