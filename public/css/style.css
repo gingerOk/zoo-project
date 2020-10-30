@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .header_image {
     height: 95vh;
 }
@@ -35,3 +39,23 @@
     .show {
       display: block;
     }
+.search_image {
+  height: 100%;
+}
+
+.search_block {
+  padding-top: 60px;
+  background-color:  #f7f7f7;
+}
+
+.search_block input {
+  margin-top: 40px;
+  width: 80%;
+}
+.list-group{
+  max-height: 170px;
+  width: 90%;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
