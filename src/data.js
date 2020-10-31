@@ -50,6 +50,7 @@ const animals = [
                 characteristics: {
                     'COMMON NAME': 'Penguins',
                     'SCIENTIFIC NAME': 'Spheniscidae',
+                    'TYPE' : 'Birds',
                     'DIET': 'Carnivore',
                     'GROUP NAME': 'Colony',
                     'AVERAGE LIFE SPAN': '15-20 years',
@@ -182,4 +183,38 @@ const animals = [
             }
         ]
 
+export const animalsKindoms = [
+    
+    {
+        id: id(),
+        type: 'Amphibians',
+        pic: './img/Kindoms/amphibians.jpg'
+    },
+    {
+        id: id(),
+        type: 'Birds',
+        pic: './img/Kindoms/birds.jpg'
+    },
+    {
+        id: id(),
+        type: 'Fish',
+        pic: './img/Kindoms/fish.jpg'
+    },
+    {
+        id: id(),
+        type: 'Invertebrates',
+        pic: './img/Kindoms/invertebrates.jpg'
+    },
+    {
+        id: id(),
+        type: 'Mammals',
+        pic: './img/Kindoms/mammals.jpg'
+
+    },
+    {
+        id: id(),
+        type: 'Reptiles',
+        pic: './img/Kindoms/reptiles.jpg'
+    }
+]
 export default animals

@@ -17,12 +17,14 @@ const TopNavigation = () => {
         <span className="navbar-brand mx-3">Hidden brand</span>
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item active mx-2">
-            <span className="nav-link">
-              Home <span className="sr-only">(current)</span>
-            </span>
+            <NavLink exact to="/" className="nav-link">
+              Home
+            </NavLink>
           </li>
           <li className="nav-item mx-2">
-            <span className="nav-link">Animals</span>
+            <NavLink exact to="/animals" className="nav-link">
+              Animals
+            </NavLink>
           </li>
           <li className="nav-item mx-2">
             <span className="nav-link">Blog</span>

@@ -1,15 +1,25 @@
-import FactsBlock from "./components/FactsBlock";
+import {Route} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AnimalsPage from "./pages/AnimalsPage";
 import TopNavigation from "./components/TopNavigation";
-import HeaderImage from "./components/HeaderImage";
-import SearchBlock from "./components/SearchBlock"
 
 function App() {
   return (
     <>
       <TopNavigation />
-      <HeaderImage />
-      <FactsBlock />
-      <SearchBlock />
+      <Route exact path="/">
+        <HomePage />
+      </Route>
+      <Route path="/animals">
+        <AnimalsPage />
+      </Route>
+
+      {/* <Route path="/signup">
+          <SignupPage setMessage={setMessage} />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route> */}
     </>
   );
 }
