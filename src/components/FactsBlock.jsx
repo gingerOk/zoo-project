@@ -27,7 +27,7 @@ const FactsBlock = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container mb-5">
         <div className="row">
           <div className="col text-center">
             <div className="header">

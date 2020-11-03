@@ -27,7 +27,7 @@ const TopNavigation = () => {
             </NavLink>
           </li>
           <li className="nav-item mx-2">
-            <span className="nav-link">Blog</span>
+            <NavLink exact to="/blog" className="nav-link">Blog</NavLink>
           </li>
         </ul>
         <ul className="navbar-nav my-2 my-lg-0">

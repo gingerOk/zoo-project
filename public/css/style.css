@@ -1,3 +1,4 @@
+
 body {
   overflow-x: hidden;
 }
@@ -89,4 +90,8 @@ margin-right: auto;
 left: 0;
 right: 0;
 text-align: center;
+}
+
+.empty_block {
+  height: 90vh;
 }
