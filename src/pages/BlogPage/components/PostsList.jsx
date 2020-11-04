@@ -5,7 +5,7 @@ const PostsList = ({posts}) => {
     <div className="container">
       <div className="row">
         {posts.map(post => (
-          <div className="col-md-6" key={post.id}>
+          <div className="col-md-4" key={post.id}>
             <div className="card my-3" style={{maxWidth: 540}}>
               <img src={post.img} className="card-img-top" alt={post.title} />
 
