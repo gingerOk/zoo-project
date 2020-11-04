@@ -5,6 +5,7 @@ import TopNavigation from "./components/TopNavigation";
 import Switch from "react-bootstrap/esm/Switch";
 import EmptyPage from "./components/EmptyPage";
 import BlogPage from "./pages/BlogPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/blog">
           <BlogPage />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
         </Route>
       </Switch>
       {/* <Route path="/signup">

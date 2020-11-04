@@ -2,7 +2,9 @@
 body {
   overflow-x: hidden;
 }
-
+.custom-switch {
+  padding-left: 0 !important;
+}
 .header_image {
     height: 95vh;
 }
