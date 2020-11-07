@@ -236,7 +236,7 @@ export const posts = [
 ]
 
 
-export const userInfo = [
+export const userData = [
     {
     email: "user1@com.ua",
     password: "water",
