@@ -7,8 +7,10 @@ import EmptyPage from "./components/EmptyPage";
 import BlogPage from "./pages/BlogPage";
 import LoginPage from "./pages/LoginPage";
 import {userInfo} from "./data"
+
+
 function App() {
-  const user = userInfo[1];
+  const user = userInfo[0];
 
   return (
     <>
