@@ -1,17 +1,11 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {Route, withRouter, Redirect, useLocation} from "react-router-dom";
-import _find from "lodash/find";
-import {prop, sort, ascend, descend} from "ramda";
 import {BsChevronDoubleDown} from "react-icons/bs";
-//import animalsData from "../../data"
-import {Link} from "react-router-dom";
-import AddBtn from "../../components/AddBtn";
-import PostForm from "../../components/PostForm";
-import AnimalsList from "./components/AnimalsList";
-import Spinner from "../../components/Spinner";
-import {useAnimals, loadAnimals} from "../../contexts/AnimalsContext";
-import axios from "axios";
-import {animals as animalsApi} from "../../api";
+import AddBtn from "components/AddBtn";
+import PostForm from "components/PostForm";
+import AnimalsList from "pages/AnimalsPage/components/AnimalsList";
+import Spinner from "components/Spinner";
+import {useAnimals, loadAnimals} from "contexts/AnimalsContext";
 
 const AnimalsPage = props => {
   const [{animals, loading}, dispatch] = useAnimals();

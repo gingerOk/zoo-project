@@ -1,7 +1,7 @@
 import React from "react";
-import {posts} from "../../data";
-import PostsList from "./components/PostsList";
-import AddBtn from "../../components/AddBtn"
+import {posts} from "data";
+import PostsList from "pages/BlogPage/components/PostsList";
+import AddBtn from "components/AddBtn";
 import {BsPlus} from "react-icons/bs";
 
 const BlogPage = () => {
@@ -10,7 +10,7 @@ const BlogPage = () => {
   };
   return (
     <>
-      <AddBtn text='Add Post' handleClick={handleClick} />
+      <AddBtn text="Add Post" handleClick={handleClick} />
       <PostsList posts={posts} />
     </>
   );

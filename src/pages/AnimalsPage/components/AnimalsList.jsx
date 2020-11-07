@@ -1,6 +1,6 @@
 import React, {memo} from "react";
 import PropTypes from "prop-types";
-import AnimalCard from "./AnimalCard";
+import AnimalCard from "pages/AnimalsPage/components/AnimalCard";
 
 const AnimalsList = ({animals, deleteAnimal}) => {
   return (

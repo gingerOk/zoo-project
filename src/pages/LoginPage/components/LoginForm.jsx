@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {propTypes} from "react-bootstrap/esm/Image";
 import {Link} from "react-router-dom";
-import FormMessage from "../../../components/FormMessage";
+import FormMessage from "components/FormMessage";
 
 const initialData = {
   email: "",

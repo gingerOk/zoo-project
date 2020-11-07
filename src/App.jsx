@@ -1,16 +1,15 @@
 import {Route} from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import AnimalsPage from "./pages/AnimalsPage";
-import TopNavigation from "./components/TopNavigation";
+import HomePage from "pages/HomePage";
+import AnimalsPage from "pages/AnimalsPage";
+import TopNavigation from "components/TopNavigation";
 import Switch from "react-bootstrap/esm/Switch";
-import EmptyPage from "./components/EmptyPage";
-import BlogPage from "./pages/BlogPage";
-import LoginPage from "./pages/LoginPage";
-import {userInfo} from "./data"
-
+import EmptyPage from "components/EmptyPage";
+import BlogPage from "pages/BlogPage";
+import LoginPage from "pages/LoginPage";
+import {useUser} from "contexts/UserContext";
 
 function App() {
-  const user = userInfo[1];
+  const [user] = useUser();
 
   return (
     <>
@@ -28,7 +27,7 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
-        </Switch>
+      </Switch>
       {/* <Route path="/signup">
           <SignupPage setMessage={setMessage} />
         </Route>

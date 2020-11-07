@@ -1,11 +1,11 @@
-import React, {memo, useContext} from "react";
+import React, {memo} from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
-import {userInfo} from "../../../data";
-import AnimalCardBtns from "./AnimalCardBtns";
+import {useUser} from "contexts/UserContext";
+import AnimalCardBtns from "pages/AnimalsPage/components/AnimalCardBtns";
 
 const AnimalCard = ({animal}) => {
-  const user = userInfo[1];
+  const user = useUser();
   return (
     <div className="card border-0">
       <Link to="/" className="text-decor-none">

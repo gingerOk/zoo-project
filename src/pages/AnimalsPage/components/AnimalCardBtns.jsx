@@ -1,18 +1,17 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import {useAnimals, deleteAnimal} from "../../../contexts/AnimalsContext";
+import {useAnimals, deleteAnimal} from "contexts/AnimalsContext";
 
 const SelectButton = ({animal}) => {
   return (
-    <Link
-      to={`/animals/edit/${animal.id}`}
-      className="btn btn-dark mt-2 w-50"
-    >Edit</Link>
+    <Link to={`/animals/edit/${animal.id}`} className="btn btn-dark mt-2 w-50">
+      Edit
+    </Link>
   );
 };
 
 const DeleleButton = ({animal}) => {
-const [, dispatch] = useAnimals();
+  const [, dispatch] = useAnimals();
   return (
     <span
       onClick={() => deleteAnimal(dispatch, animal)}
@@ -41,7 +40,9 @@ const AnimalCardBtns = ({animal}) => {
   const buttons = (
     <div className="btns w-100">
       <SelectButton animal={animal} />
-      <span onClick={showConfirm} className="btn btn-light mt-2 w-50">Delete</span>
+      <span onClick={showConfirm} className="btn btn-light mt-2 w-50">
+        Delete
+      </span>
     </div>
   );
 

@@ -1,6 +1,6 @@
-import HeaderImage from "../../components/HeaderImage";
-import SearchBlock from "../../components/SearchBlock";
-import FactsBlock from "../../components/FactsBlock";
+import HeaderImage from "components/HeaderImage";
+import SearchBlock from "components/SearchBlock";
+import FactsBlock from "components/FactsBlock";
 
 const HomePage = () => {
   return (
