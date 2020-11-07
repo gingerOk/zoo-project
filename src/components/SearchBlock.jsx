@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import animals from "../data";
-import SearchShowBlock from "./SearchShowBlock";
+import animals from "data";
+import SearchShowBlock from "components/SearchShowBlock";
 
 const SearchBlock = () => {
   const [searchItem, setSearchItem] = useState("");

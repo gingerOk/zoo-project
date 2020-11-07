@@ -107,3 +107,8 @@ text-align: center;
 .text-decor-none:hover {
   text-decoration: none;
 }
+
+.img_form {
+  width: 250px;
+  height: 250px;
+}

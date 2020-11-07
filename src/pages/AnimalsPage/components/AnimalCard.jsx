@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import {useUser} from "contexts/UserContext";
 import AnimalCardBtns from "pages/AnimalsPage/components/AnimalCardBtns";
-
+import {userData} from "data"
 const AnimalCard = ({animal}) => {
-  const user = useUser();
+  const user = userData[1];
   return (
     <div className="card border-0">
       <Link to="/" className="text-decor-none">

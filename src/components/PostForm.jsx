@@ -1,13 +1,16 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext, useEffect, useRef} from "react";
 import {Link, useHistory, useParams} from "react-router-dom";
 import _find from "lodash/find";
-import {saveAnimal, useAnimals} from "../contexts/AnimalsContext";
+import {generate} from "shortid";
+import ImageLoader from "components/ImageLoader";
+import {saveAnimal, useAnimals} from "contexts/AnimalsContext";
+import axios from "axios";
 
 const initialData = {
   id: null,
-  title: "",
-  img: "",
-  shortDescription: "",
+  name: "",
+  imageLink: "",
+  fact: "",
 };
 
 const PostForm = () => {
@@ -16,37 +19,40 @@ const PostForm = () => {
   const [loading, setLoading] = useState(false);
   const [state, dispatch] = useAnimals();
   const history = useHistory();
+  const photoRef = useRef();
   const {id} = useParams();
-
   useEffect(() => {
     const animal = _find(state.animals, {id}) || {};
     if (animal.id && animal.id !== data.id) {
       setData(animal);
-      console.log("edit item");
     }
+
     if (!animal.id && data.id) {
       setData(initialData);
-      console.log("new item");
     }
   }, [id, data.id, state]);
 
   const validate = data => {
     const errors = {};
-    if (!data.title) errors.title = "Title cannot be blank";
-    if (!data.img) errors.img = "Image cannot be blank";
-    if (!data.description) errors.description = "Description cannot be blank";
+    if (!data.name) errors.name = "Name cannot be blank";
+    if (!data.imageLink) errors.imageLink = "Image cannot be blank";
+    // if (!data.shortDescription)
+    //   errors.shortDescription = "Description cannot be blank";
 
     return errors;
   };
 
-  const handleChange = e => {
-    setData({...data, [e.target.name]: e.target.value});
-    console.log(data);
-    setErrors({...errors, [e.target.name]: ""});
+  const updatePhoto = e => {
+    const file = photoRef.current.files && photoRef.current.files[0];
+    if (file) {
+      const imageLink = "/img/" + file.name;
+      setData(data => ({...data, imageLink}));
+    }
   };
 
   const handleSubmit = e => {
     e.preventDefault();
+
     const errors = validate(data);
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
@@ -56,15 +62,13 @@ const PostForm = () => {
           history.push("/animals");
         })
         .catch(err => {
-          setErrors(err.response.data.errors);
           setLoading(false);
         });
     }
   };
 
   const setFormObj = (data, fn) => ({target}) => {
-    const value = target.value;
-    return fn({...data, [target.name]: value});
+    return fn({...data, [target.name]: target.value});
   };
 
   return (
@@ -75,14 +79,14 @@ const PostForm = () => {
             {/*  title START */}
             <div className="col-6">
               <div
-                className={`form-group ${errors.title ? "alert-danger" : ""}`}
+                className={`form-group ${errors.name ? "alert-danger" : ""}`}
               >
-                <label htmlFor="title">Post title</label>
+                <label htmlFor="title">Animal Name</label>
                 <input
-                  value={data.title}
+                  value={data.name}
                   onChange={setFormObj(data, setData)}
                   type="text"
-                  name="title"
+                  name="name"
                   id="title"
                   placeholder="Post title"
                   className="form-control"
@@ -90,31 +94,44 @@ const PostForm = () => {
               </div>
               {/*  title END */}
               {/*  img field Start */}
-              <div className="form-group">
+              <div
+                className={`form-group ${
+                  errors.imageLink ? "alert-danger" : ""
+                }`}
+              >
+                <label htmlFor="imageLink">Image</label>
+                <input
+                  name="imageLink"
+                  value={data.imageLink}
+                  onChange={setFormObj(data, setData)}
+                  className="form-control"
+                />
                 <div className="custom-file">
                   <label htmlFor="photo" className="custom-file-label">
                     Photo
                   </label>
-                  <input type="file" id="photo" className="custom-file-input" />
+                  <input
+                    ref={photoRef}
+                    onChange={updatePhoto}
+                    type="file"
+                    id="photo"
+                    className="custom-file-input"
+                  />
                 </div>
               </div>
             </div>
-
             <div className="col-6">
-              <div className={`form-group ${errors.img ? "alert-danger" : ""}`}>
-                <label htmlFor="img">Image</label>
-                <input
-                  name="img"
-                  value={data.img}
-                  onChange={setFormObj(data, setData)}
-                  className="form-control"
-                />
-              </div>
+              {/* <ImageLoader
+                src={data.img}
+                fallbackImg="http://via.placeholder.com/250x250"
+                className="img_form"
+                alt={data.name}
+              /> */}
             </div>
           </div>
           {/*  img field END */}
           {/* description START */}
-          <div
+          {/* <div
             className={`form-group ${
               errors.shortDescription ? "alert-danger" : ""
             }`}
@@ -128,7 +145,7 @@ const PostForm = () => {
               placeholder="Short description"
               className="form-control"
             ></textarea>
-          </div>
+          </div> */}
           <div className={`form-group ${errors.fact ? "alert-danger" : ""}`}>
             <label htmlFor="fact">Fact about the animal</label>
             <textarea

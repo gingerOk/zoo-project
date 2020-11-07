@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import animals from "../data";
+import animals from "data";
 import {BsChevronDoubleDown} from "react-icons/bs"
 
 const FactsBlock = () => {
