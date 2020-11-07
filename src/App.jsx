@@ -10,7 +10,7 @@ import {userInfo} from "./data"
 
 
 function App() {
-  const user = userInfo[0];
+  const user = userInfo[1];
 
   return (
     <>

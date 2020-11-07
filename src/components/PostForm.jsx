@@ -1,5 +1,7 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React, {useState, useContext, useEffect} from "react";
+import {Link, useHistory, useParams} from "react-router-dom";
+import _find from "lodash/find";
+import {saveAnimal, useAnimals} from "../contexts/AnimalsContext";
 
 const initialData = {
   id: null,
@@ -8,10 +10,25 @@ const initialData = {
   shortDescription: "",
 };
 
-const PostForm = ({item, saveItem}) => {
+const PostForm = () => {
   const [data, setData] = useState(initialData);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [state, dispatch] = useAnimals();
+  const history = useHistory();
+  const {id} = useParams();
+
+  useEffect(() => {
+    const animal = _find(state.animals, {id}) || {};
+    if (animal.id && animal.id !== data.id) {
+      setData(animal);
+      console.log("edit item");
+    }
+    if (!animal.id && data.id) {
+      setData(initialData);
+      console.log("new item");
+    }
+  }, [id, data.id, state]);
 
   const validate = data => {
     const errors = {};
@@ -23,14 +40,35 @@ const PostForm = ({item, saveItem}) => {
   };
 
   const handleChange = e => {
+    setData({...data, [e.target.name]: e.target.value});
+    console.log(data);
+    setErrors({...errors, [e.target.name]: ""});
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
     const errors = validate(data);
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
       setLoading(true);
+      saveAnimal(dispatch, data)
+        .then(() => {
+          history.push("/animals");
+        })
+        .catch(err => {
+          setErrors(err.response.data.errors);
+          setLoading(false);
+        });
     }
   };
+
+  const setFormObj = (data, fn) => ({target}) => {
+    const value = target.value;
+    return fn({...data, [target.name]: value});
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="row">
@@ -42,7 +80,7 @@ const PostForm = ({item, saveItem}) => {
                 <label htmlFor="title">Post title</label>
                 <input
                   value={data.title}
-                  onChange={handleChange}
+                  onChange={setFormObj(data, setData)}
                   type="text"
                   name="title"
                   id="title"
@@ -57,12 +95,7 @@ const PostForm = ({item, saveItem}) => {
                   <label htmlFor="photo" className="custom-file-label">
                     Photo
                   </label>
-                  <input
-                    onChange={handleChange}
-                    type="file"
-                    id="photo"
-                    className="custom-file-input"
-                  />
+                  <input type="file" id="photo" className="custom-file-input" />
                 </div>
               </div>
             </div>
@@ -73,7 +106,7 @@ const PostForm = ({item, saveItem}) => {
                 <input
                   name="img"
                   value={data.img}
-                  onChange={handleChange}
+                  onChange={setFormObj(data, setData)}
                   className="form-control"
                 />
               </div>
@@ -81,14 +114,29 @@ const PostForm = ({item, saveItem}) => {
           </div>
           {/*  img field END */}
           {/* description START */}
-          <div className={`form-group ${errors.shortDescription ? "alert-danger" : ""}`}>
+          <div
+            className={`form-group ${
+              errors.shortDescription ? "alert-danger" : ""
+            }`}
+          >
             <label htmlFor="description">Short description</label>
             <textarea
               value={data.shortDescription}
-              onChange={handleChange}
+              onChange={setFormObj(data, setData)}
               name="description"
               id="description"
               placeholder="Short description"
+              className="form-control"
+            ></textarea>
+          </div>
+          <div className={`form-group ${errors.fact ? "alert-danger" : ""}`}>
+            <label htmlFor="fact">Fact about the animal</label>
+            <textarea
+              value={data.fact}
+              onChange={setFormObj(data, setData)}
+              name="fact"
+              id="fact"
+              placeholder="Fact"
               className="form-control"
             ></textarea>
           </div>

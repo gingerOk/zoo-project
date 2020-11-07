@@ -1,5 +1,4 @@
 import React, {memo} from "react";
-import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import AnimalCard from "./AnimalCard";
 
@@ -8,7 +7,7 @@ const AnimalsList = ({animals, deleteAnimal}) => {
     <div className="row my-5 justify-content-center px-2">
       {animals.map(item => (
         <div className="col-md-4 col px-lg-5 my-lg-3" key={item.id}>
-            <AnimalCard key={item.id} animal={item} deleteAnimal={deleteAnimal} />
+          <AnimalCard key={item.id} animal={item} />
         </div>
       ))}
     </div>

@@ -1,6 +1,6 @@
 import React, {useContext, useState} from "react";
 import {Link} from "react-router-dom";
-import AnimalsContext from "../../../contexts/AnimalsContext";
+import {useAnimals, deleteAnimal} from "../../../contexts/AnimalsContext";
 
 const SelectButton = ({animal}) => {
   return (
@@ -11,11 +11,11 @@ const SelectButton = ({animal}) => {
   );
 };
 
-const DeleleButton = ({animal, deleteAnimal}) => {
-  //const {deleteAnimal} = useContext(AnimalsContext);
+const DeleleButton = ({animal}) => {
+const [, dispatch] = useAnimals();
   return (
     <span
-      onClick={() => deleteAnimal(animal)}
+      onClick={() => deleteAnimal(dispatch, animal)}
       className="btn btn-warning mt-2 w-50"
     >
       YES
@@ -23,7 +23,7 @@ const DeleleButton = ({animal, deleteAnimal}) => {
   );
 };
 
-const AnimalCardBtns = ({animal, deleteAnimal}) => {
+const AnimalCardBtns = ({animal}) => {
   const [show, setShow] = useState(false);
 
   const showConfirm = () => setShow(true);
@@ -31,7 +31,7 @@ const AnimalCardBtns = ({animal, deleteAnimal}) => {
 
   const confirmButtons = (
     <div className="btns w-100">
-      <DeleleButton animal={animal} deleteAnimal={deleteAnimal} />
+      <DeleleButton animal={animal} />
       <span onClick={hideConfirm} className="btn btn-light mt-2 w-50">
         NO
       </span>
