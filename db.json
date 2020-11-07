@@ -15,7 +15,7 @@
                    
                },
         {
-                   "": "Penguins",
+                   "name": "Penguins",
                    "id": "pngns123",
                    "imageLink": "./img/penguin.jpg"
                },
