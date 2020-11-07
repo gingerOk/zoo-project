@@ -6,8 +6,10 @@ import Switch from "react-bootstrap/esm/Switch";
 import EmptyPage from "./components/EmptyPage";
 import BlogPage from "./pages/BlogPage";
 import LoginPage from "./pages/LoginPage";
-
+import {userInfo} from "./data"
 function App() {
+  const user = userInfo[1];
+
   return (
     <>
       <TopNavigation />
@@ -15,11 +17,8 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/animals">
-          <AnimalsPage />
-        </Route>
-        <Route path="/animals/:category">
-          <EmptyPage />
+        <Route path="/animals">
+          <AnimalsPage user={user} />
         </Route>
         <Route path="/blog">
           <BlogPage />
@@ -27,7 +26,7 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
-      </Switch>
+        </Switch>
       {/* <Route path="/signup">
           <SignupPage setMessage={setMessage} />
         </Route>

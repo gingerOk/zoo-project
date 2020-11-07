@@ -97,3 +97,13 @@ text-align: center;
 .empty_block {
   height: 90vh;
 }
+
+
+.animal-card {
+  width: 530px;
+  height: 430px;
+}
+
+.text-decor-none:hover {
+  text-decoration: none;
+}

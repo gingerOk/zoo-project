@@ -1,7 +1,8 @@
 import React from "react";
 import {posts} from "../../data";
 import PostsList from "./components/PostsList";
-import {FaPlus} from "react-icons/fa";
+import AddBtn from "../../components/AddBtn"
+import {BsPlus} from "react-icons/bs";
 
 const BlogPage = () => {
   const handleClick = e => {
@@ -9,18 +10,7 @@ const BlogPage = () => {
   };
   return (
     <>
-      <div className="row justify-content-end">
-        <div className="col-4">
-          <button
-            type="button"
-            className="btn btn-dark px-5 py-2 my-4"
-            onClick={handleClick}
-          >
-            <FaPlus />
-            Add Post
-          </button>
-        </div>
-      </div>
+      <AddBtn text='Add Post' handleClick={handleClick} />
       <PostsList posts={posts} />
     </>
   );

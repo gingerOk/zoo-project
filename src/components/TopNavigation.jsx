@@ -14,9 +14,9 @@ const TopNavigation = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className={`collapse navbar-collapse ${showNav ? "show" : "hide"}`}>
-        <span className="navbar-brand mx-4">
+        <NavLink exact to="/" className="navbar-brand mx-4">
         <img src="./img/logo.jpg" alt="logo" style={{width: 70}}/>
-        </span>
+        </NavLink>
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item active mx-2">
             <NavLink exact to="/" className="nav-link">

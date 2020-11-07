@@ -8,7 +8,7 @@ const initialData = {
   shortDescription: "",
 };
 
-const PostForm = () => {
+const PostForm = ({item, saveItem}) => {
   const [data, setData] = useState(initialData);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);

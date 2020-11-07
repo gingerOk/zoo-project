@@ -1,3 +1,5 @@
+import { computeHeadingLevel } from "@testing-library/react";
+
 function id() {
     return Math.floor(new Date().getTime() + Math.random() * 1e6).toString(36);
   }
@@ -231,5 +233,20 @@ export const posts = [
         img: './img/posts/chimpanzees.jpg',
         shortDescription: 'As Americans vote in the 2020 presidential election, we looked at how animals from elephants to bees keep their societies in line'
     }
+]
+
+
+export const userInfo = [
+    {
+    email: "user1@com.ua",
+    password: "water",
+    token: true,
+    role: "user"
+}, {
+    email: "admin1@com.ua",
+    password: "water",
+    token: true,
+    role: "admin"
+}
 ]
 export default animals
