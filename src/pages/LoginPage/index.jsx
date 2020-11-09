@@ -1,8 +1,19 @@
 import React from "react";
+import {useHistory} from "react-router-dom";
 import LoginForm from "pages/LoginPage/components/LoginForm";
+import {users} from "api";
+import {useUser, login} from "contexts/UserContext";
 
 const LoginPage = () => {
-  const submit = () => {};
+  const [, dispatch] = useUser();
+  const history = useHistory();
+
+  const submit = user =>
+    users.login(user).then(token => {
+      login(dispatch, token);
+      history.push("/animals");
+    });
+
   return (
     <div className="container">
       <div className="row justify-content-center mt-5">

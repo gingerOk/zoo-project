@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {propTypes} from "react-bootstrap/esm/Image";
 import {Link} from "react-router-dom";
+import isEmail from "validator/lib/isEmail";
 import FormMessage from "components/FormMessage";
 
 const initialData = {
@@ -15,43 +15,45 @@ const LoginForm = props => {
 
   const validate = data => {
     const errors = {};
-    if (!data.email) errors.email = "Email cannot be blank";
+    if (!isEmail(data.email)) errors.email = "Email cannot be blank";
     if (!data.password) errors.password = "Password cannot be blank";
 
     return errors;
   };
 
-  const handleChange = e => {
-    e.preventDefault();
-  };
   const handleSubmit = async e => {
     e.preventDefault();
     const errors = validate(data);
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
       setLoading(true);
+      console.log(data)
       try {
         await props.submit(data);
-
         setLoading(false);
       } catch (error) {
-        setErrors(error.response.data.errors);
         setLoading(false);
       }
     }
   };
-
+  const setFormObj = (data, fn) => ({target}) => {
+    return fn({...data, [target.name]: target.value});
+  };
   return (
-    <form className="form-signin" onSubmit={handleSubmit}>
+    <form
+      className={`form-signin ${loading ? "spinner-border" : ""}`}
+      onSubmit={handleSubmit}
+    >
       <h1 className="mt-2 text-center alert alert-dark">Please Login</h1>
-      <div className="form-group">
+      <div className={`form-group ${errors.email ? "alert-danger" : ""}`}>
         <label htmlFor="inputEmail" className="mt-2">
           Email address
         </label>
         <input
-          type="email"
-          onChange={handleChange}
           value={data.email}
+          onChange={setFormObj(data, setData)}
+          type="text"
+          name="email"
           id="inputEmail"
           className="form-control"
           placeholder="Email address"
@@ -59,14 +61,15 @@ const LoginForm = props => {
         />
         {errors.email && <FormMessage>{errors.email}</FormMessage>}
       </div>
-      <div className="form-group">
+      <div className={`form-group ${errors.password ? "alert-danger" : ""}`}>
         <label htmlFor="inputPassword" className="mt-2">
           Password
         </label>
         <input
-          type="text"
-          onChange={handleChange}
           value={data.password}
+          onChange={setFormObj(data, setData)}
+          type="text"
+          name="password"
           id="inputPassword"
           className="form-control"
           placeholder="Password"

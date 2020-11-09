@@ -1,25 +1,31 @@
-import React, {lazy, Suspense} from 'react';
+import React, {useState, lazy, Suspense} from "react";
 import {Route} from "react-router-dom";
 import HomePage from "pages/HomePage";
 import TopNavigation from "components/TopNavigation";
 import Switch from "react-bootstrap/esm/Switch";
 import EmptyPage from "components/EmptyPage";
 import {useUser} from "contexts/UserContext";
-import {userData} from "data"
-import Spinner from "components/Spinner"
-
-
+import Spinner from "components/Spinner";
+import RegisterPage from "pages/RegisterPage";
+import {MdClose} from "react-icons/md";
 
 const AnimalsPage = lazy(() => import("pages/AnimalsPage"));
 const BlogPage = lazy(() => import("pages/BlogPage"));
 const LoginPage = lazy(() => import("pages/LoginPage"));
 
 function App() {
-  const user = userData[1];
+  const [message, setMessage] = useState("");
+  const [user] = useUser();
 
   return (
     <Suspense fallback={<Spinner />}>
       <TopNavigation />
+      {message && (
+        <div className="alert-info">
+          <MdClose onClick={() => setMessage("")} />
+          {message}
+        </div>
+      )}
       <Switch>
         <Route exact path="/">
           <HomePage />
@@ -33,13 +39,10 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
-      </Switch>
-      {/* <Route path="/signup">
-          <SignupPage setMessage={setMessage} />
+        <Route path="/register">
+          <RegisterPage setMessage={setMessage} />
         </Route>
-        <Route path="/login">
-          <LoginPage />
-        </Route> */}
+      </Switch>
     </Suspense>
   );
 }

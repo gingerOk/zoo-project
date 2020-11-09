@@ -1,8 +1,13 @@
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
+import {useUser, logout} from "contexts/UserContext";
+import {FaSignOutAlt} from "react-icons/fa";
 
 const TopNavigation = () => {
+  const [user, dispatch] = useUser();
   const [showNav, setShowNav] = useState(false);
+  const isAdmin = user.token && user.role === "admin";
+  const isAuth = !!user.token;
 
   const toggleNav = () => {
     setShowNav(!showNav);
@@ -40,14 +45,24 @@ const TopNavigation = () => {
           </li>
         </ul>
         <ul className="navbar-nav my-2 my-lg-0">
-          <li className="nav-item mx-2">
-            <span className="nav-link">Register</span>
-          </li>
-          <li className="nav-item mx-2">
-            <NavLink exact to="/login" className="nav-link">
-              Login
-            </NavLink>
-          </li>
+          {isAuth ? (
+            <span onClick={() => logout(dispatch)} className="nav-item">
+              <FaSignOutAlt /> Logout
+            </span>
+          ) : (
+            <>
+              <li className="nav-item mx-2">
+                <NavLink exact to="/register" className="nav-link">
+                  Register
+                </NavLink>
+              </li>
+              <li className="nav-item mx-2">
+                <NavLink exact to="/login" className="nav-link">
+                  Login
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>

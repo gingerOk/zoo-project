@@ -1,16 +1,18 @@
-import React, {useState, useContext, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import {Link, useHistory, useParams} from "react-router-dom";
 import _find from "lodash/find";
-import {generate} from "shortid";
 import ImageLoader from "components/ImageLoader";
 import {saveAnimal, useAnimals} from "contexts/AnimalsContext";
-import axios from "axios";
+import FormMessage from "components/FormMessage";
 
 const initialData = {
   id: null,
   name: "",
   imageLink: "",
+  shortDescription: "",
+  description: "",
   fact: "",
+  scientificName: "",
 };
 
 const PostForm = () => {
@@ -36,9 +38,12 @@ const PostForm = () => {
     const errors = {};
     if (!data.name) errors.name = "Name cannot be blank";
     if (!data.imageLink) errors.imageLink = "Image cannot be blank";
-    // if (!data.shortDescription)
-    //   errors.shortDescription = "Description cannot be blank";
-
+    if (!data.shortDescription)
+      errors.shortDescription = "Short escription cannot be blank";
+    if (!data.description) errors.description = "Description cannot be blank";
+    if (!data.fact) errors.fact = "Fact cannot be blank";
+    if (!data.scientificName)
+      errors.scientificName = "Scientific name cannot be blank";
     return errors;
   };
 
@@ -52,7 +57,6 @@ const PostForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const errors = validate(data);
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
@@ -62,6 +66,7 @@ const PostForm = () => {
           history.push("/animals");
         })
         .catch(err => {
+          setErrors(err.response.data.errors);
           setLoading(false);
         });
     }
@@ -72,7 +77,10 @@ const PostForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className={`${loading ? "spinner-border" : ""}`}
+    >
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="row">
@@ -91,6 +99,7 @@ const PostForm = () => {
                   placeholder="Post title"
                   className="form-control"
                 />
+                {errors.name && <FormMessage>{errors.name}</FormMessage>}
               </div>
               {/*  title END */}
               {/*  img field Start */}
@@ -106,6 +115,9 @@ const PostForm = () => {
                   onChange={setFormObj(data, setData)}
                   className="form-control"
                 />
+                {errors.imageLink && (
+                  <FormMessage>{errors.imageLink}</FormMessage>
+                )}
                 <div className="custom-file">
                   <label htmlFor="photo" className="custom-file-label">
                     Photo
@@ -131,21 +143,42 @@ const PostForm = () => {
           </div>
           {/*  img field END */}
           {/* description START */}
-          {/* <div
+          <div
             className={`form-group ${
               errors.shortDescription ? "alert-danger" : ""
             }`}
           >
-            <label htmlFor="description">Short description</label>
+            <label htmlFor="shortDescription">
+              Short Description of the animal
+            </label>
             <textarea
               value={data.shortDescription}
               onChange={setFormObj(data, setData)}
+              name="shortDescription"
+              id="shortDescription"
+              placeholder="Short Description"
+              className="form-control"
+            />
+            {errors.shortDescription && (
+              <FormMessage>{errors.shortDescription}</FormMessage>
+            )}
+          </div>
+          <div
+            className={`form-group ${errors.description ? "alert-danger" : ""}`}
+          >
+            <label htmlFor="fact">Full description of the animal</label>
+            <textarea
+              value={data.description}
+              onChange={setFormObj(data, setData)}
               name="description"
               id="description"
-              placeholder="Short description"
+              placeholder="Description"
               className="form-control"
-            ></textarea>
-          </div> */}
+            />
+            {errors.description && (
+              <FormMessage>{errors.description}</FormMessage>
+            )}
+          </div>
           <div className={`form-group ${errors.fact ? "alert-danger" : ""}`}>
             <label htmlFor="fact">Fact about the animal</label>
             <textarea
@@ -155,7 +188,29 @@ const PostForm = () => {
               id="fact"
               placeholder="Fact"
               className="form-control"
-            ></textarea>
+            />
+            {errors.fact && <FormMessage>{errors.fact}</FormMessage>}
+          </div>
+          <div
+            className={`form-group ${
+              errors.scientificName ? "alert-danger" : ""
+            }`}
+          >
+            <label htmlFor="scientificName">
+              Scientific name of the animal
+            </label>
+            <input
+              value={data.scientificName}
+              onChange={setFormObj(data, setData)}
+              name="scientificName"
+              type="text"
+              id="scientificName"
+              placeholder="Scientific Name"
+              className="form-control"
+            />
+            {errors.scientificName && (
+              <FormMessage>{errors.scientificName}</FormMessage>
+            )}
           </div>
           {/* description END */}
           {/* buttons start */}

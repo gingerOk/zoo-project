@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "animals": [
     {
       "name": "Polar Bear",
@@ -55,70 +54,48 @@
       "id": "chth123",
       "imageLink": "/img/cheetah.jpg",
       "fact": "Cheetahs are the only big cats that can't roar."
+    },
+    {
+      "name": "HARPY EAGLE",
+      "imageLink": "/img/harpy-eagle.jpg",
+      "shortDescription": "lijblij",
+      "description": ";kjbjnbkj",
+      "fact": "jhbjh",
+      "scientificName": "jbkjb",
+      "id": "nMEfgxu"
+    },
+    {
+      "name": "dc",
+      "imageLink": "/img/harpy-eagle.jpg",
+      "shortDescription": "sdsdcsd",
+      "description": "sdcsc",
+      "fact": "sdcsdc",
+      "scientificName": "sdds",
+      "id": "ar49jGf"
+    },
+    {
+      "name": "African Elephant",
+      "imageLink": "/img/african_elephant.jpg",
+      "shortDescription": "sdcsdc",
+      "description": "c xc ",
+      "fact": "Elephants are the largest land animals.",
+      "scientificName": "sdcsdc",
+      "id": "R4tnH5T"
+    },
+    {
+      "id": "JBdac8m",
+      "name": "sdsc",
+      "imageLink": "sdcsdc",
+      "shortDescription": "sdcsdc",
+      "description": "dcsdc",
+      "fact": "sdcsdcsd",
+      "scientificName": "dscdsc"
     }
+  ],
+  "users": [
+    
+  ],
+  "auth": [
+
   ]
 }
-=======
-    "animals" : [
-        {
-                   "name": "Polar Bear",
-                   "id": "plbr123",
-                   "imageLink": "/img/polar_bear.jpg",
-                   "fact": "Under their white fur, polar bears have black skin."
-                   
-               },
-       {
-                   "name": "African Elephant",
-                   "id": "afrcnlfnt123",
-                   "imageLink": "/img/african_elephant.jpg",
-                   "fact": "Elephants are the largest land animals."
-                   
-               },
-        {
-                   "name": "Penguins",
-                   "id": "pngns123",
-                   "imageLink": "/img/penguin.jpg"
-               },
-       {
-                   "name": "Jaguar",
-                   "id": "jgr123",
-                   "imageLink": "/img/jaguar.jpg"
-               },
-        {
-                   "name": "Bald Eagle",
-                   "id": "bldgl123",
-                   "imageLink": "/img/bald_eagle.jpg",
-                   "fact": "The bald eagle has a wingspan of 8 feet."
-               },
-       {
-                   "name": "Artic Fox",
-                   "id": "rtcfx123",
-                   "imageLink": "/img/artic_fox.jpg"
-               },
-       {
-                   "name": "Koala",
-                   "id": "kl123",
-                   "imageLink": "/img/koala.jpg",
-                   "fact": "Koalas often return to trees they consider their territory."
-               },
-        {
-                   "name": "Giraffe",
-                   "id": "grff123",
-                   "imageLink": "/img/giraffe.jpg"
-               },
-       {
-                   "name": "Giant Panda",
-                   "id": "gntpnd",
-                   "imageLink": "/img/panda.jpg"
-               },
-        {
-                   "name": "Cheetah",
-                   "id": "chth123",
-                   "imageLink": "/img/cheetah.jpg",
-                   "fact": "Cheetahs are the only big cats that can't roar."
-               }
-           ]
-        }
-   
-   
->>>>>>> f63be5e2bcc215f34c1187d223ecfc2d5dc62347
