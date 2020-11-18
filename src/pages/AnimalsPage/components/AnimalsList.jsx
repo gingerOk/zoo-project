@@ -2,7 +2,7 @@ import React, {memo} from "react";
 import PropTypes from "prop-types";
 import AnimalCard from "pages/AnimalsPage/components/AnimalCard";
 
-const AnimalsList = ({animals, deleteAnimal}) => {
+const AnimalsList = ({animals}) => {
   return (
     <div className="row my-5 justify-content-center px-2">
       {animals.map(item => (

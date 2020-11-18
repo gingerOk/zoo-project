@@ -47,6 +47,7 @@ export function AnimalsProvider(props) {
 
 export function useAnimals() {
   const context = useContext(AnimalCoxtext);
+  console.log(context)
   if (!context) throw Error("useAnimals must be render within AnimalContext");
   return context;
 }

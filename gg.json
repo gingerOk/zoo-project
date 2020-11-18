@@ -1,0 +1,114 @@
+{
+    "animals": [
+        {
+            "name": "Bee-Eater",
+            "shortDescription": "The aptly named bee-eater bird is a skilled hunter, capable of catching a bee in flight, then heading to a tree branch to stun it and remove the stinger before eating it.",
+            "description": "The aptly named bee-eater bird is a skilled hunter, capable of catching a bee in flight, then heading to a tree branch to stun it and remove the stinger before eating it. These brightly colored birds make their nests in earthen banks or cliffs, in colonies of up to 100 individuals. Two species—white-fronted and white-throated bee-eaters—can be seen at Africa Rocks.",
+            "fact": "Bee-eaters have one of the most complex social systems of any bird species. Many species (but not all) are monogamous, cooperative breeders living in large colonies of over 100 birds, but can reach 200 birds if conditions are favorable.",
+            "Scientific name": "Meropidae"
+        },
+
+        {
+            "name": "ARCTIC FOX",
+            "shortDescription": "A small, round body with thick fur and a fluffy tail help the Arctic fox survive its cold, harsh habitat.",
+            "description": "A small, round body with thick fur and a cute, fluffy tail help the Arctic fox survive its cold, harsh habitat. Even the bottom of its paws has hair to give the fox good traction as it races across icy ground. But for an Arctic fox, the tail, also called a 'brush,' is extra useful, since the fox curls it around the face like a scarf when the frigid winds blow. An Arctic fox’s fur changes colors with the seasons of the year. In winter, it is white so that it blends in with the snow. During the spring, the fox sheds its winter coat, revealing gray fur underneath.",
+            "fact": "Most arctic foxes turn white in winter, but some have brownish blue fur. In summer, arctic foxes shed their winter coats for brown and cream fur. Arctic foxes have small ears, short muzzles, and thick fur to minimize heat loss. In winter, arctic foxes range over huge areas seeking rodents or mammal carcasses",
+            "Scientific name": "Vulpes lagopus"
+        },
+
+        {
+            "name": "BATELEUR EAGLE",
+            "shortDescription": "Both predator and scavenger—with a vulture’s ability to feed on carrion, and an eagle’s ability to hunt and kill snakes and other prey with its feet—the bateleur eagle is both versatile and unique.",
+            "description": "Both predator and scavenger—with a vulture’s ability to feed on carrion, and an eagle’s ability to hunt and kill snakes and other prey with its feet—the bateleur eagle is both versatile and unique. Found in savannas and grasslands of sub-Saharan Africa, the bateleur eagle is known for its low, back-and-forth aerial searches for food on the land below, and its ability to descend in a tight spiral, plummeting toward the ground at high speed to retrieve its prey.",
+            "fact": "The bateleur is a proudly African eagle. The raptor spends its days soaring through the African sky and scanning for its next meal. Bateleur eagles are widely distributed in Africa, particularly in the south of the Sahara Desert. But unlike many eagle species, they prefer open land to dense forest.",
+            "Scientific name": "Terathopius ecaudatus"
+        },
+
+        {
+            "name": "CAMEL",
+            "shortDescription": "Camels can travel as fast as horses, but can also endure legendary periods of time without food or water.",
+            "description": "Camels were domesticated more than 3,000 years ago, yet humans still depend on them for transport across arid environments. They can easily carry extra weight while walking miles a day in the desert. Camels can travel as fast as horses but can also endure legendary periods of time without food or water. Humans have used camels for their wool, milk, meat, leather, and dung, which can be used for fuel. Look for dromedary or one-humped camels in Elephant Odyssey.",
+            "fact": "The camel’s hump is filled with fat, not water. While dromedary camels are largely domesticated and their population is stable, Bactrian camels are critically endangered in the wild.",
+            "Scientific name": "Camelus"
+        },
+
+        {
+            "name": "CHEETAH",
+            "shortDescription": "Cheetahs are the world's fastest land animal—capable of reaching speeds up to 70 miles per hour!",
+            "description": "Cheetahs are the world's fastest land animal—capable of reaching speeds up to 70 miles per hour. Throughout history, these remarkable cats have adorned the courts of kings, queens, and emperors, and their amazing grace and beauty still captivate the world today.",
+            "fact": "Cheetahs are the only big cats that can't roar.",
+            "Scientific name": "Acinonyx jubatus"
+        },
+        {
+            "name": "ELEPHANT",
+            "shortDescription": "African elephants have very large ears that are shaped like the continent of Africa, while Asian elephants have smaller ears.",
+            "description": "At first glance, African elephants look similar to Asian elephants, but they are different species that live in different parts of the world. Yet in Elephant Odyssey, you can see both species! How to tell them apart? African elephants have very large ears that are shaped like the continent of Africa, while Asian elephants have smaller ears. Also, an Asian elephant's back is rounded, but an African elephant's back has a dip or sway in it. Their trunks are a little different, too: African elephants have two “fingers” at the end of their trunk; Asian elephants have one. Asian elephants are categorized as Endangered on the International Union for Conservation of Nature (IUCN) Red List of Threatened Species, and African elephants are Vulnerable.",
+            "fact": "Elephants are the largest land animals",
+            "Scientific name": "Loxodonta africana"
+        },
+
+        {
+            "name": "GALÁPAGOS TORTOISE",
+            "shortDescription": "Several of our Galápagos tortoises have been with us since 1928, making them the oldest residents in the Zoo. We estimate their age to be well over 100.",
+            "description": "Some of the Zoo’s oldest—and slowest—residents are the Galápagos tortoises. Several have been with us since 1928, making them the oldest residents in the Zoo. We estimate their age to be well over 100! Numbers painted on each animal’s shell help us identify them: white-numbered tortoises are males, red numbers indicate females. Each tortoise has its own unique personality: some are shy, while others are more interactive with their keepers, stretching up for a neck rub or eating right out of their hand. These behemoths are attracted to the colors found in flowers, a favorite food—reds, yellows, pinks, and oranges. Try wearing your brightest clothing and see if you get the attention of a Galápagos tortoise!",
+            "fact": "A Galápagos tortoise can go without eating or drinking for up to a year, because it can store food and water in its body.",
+            "Scientific name": "Chelonoidis nigra"
+        },
+        
+        {
+            "name": "GIRAFFE",
+            "shortDescription": "Giraffes are distinguished by their coat patterns, and by where they live in Africa. At the Zoo's Urban Jungle, you can see Masai giraffes.",
+            "description": "Our giraffe exhibit lets you get amazingly close to these tremendously tall creatures. A giraffe could look into a second-story window without even having to stand on its tiptoes! There is only one giraffe species, but there are several subspecies—two of which are endangered. They are distinguished by their coat patterns and by where they live in Africa. For a long time, people called the giraffe a camel-leopard, believing it was a combination of a camel and a leopard! We have Masai giraffes, native to Kenya, with patterns that look like oak leaves. Our giraffes share their space with much smaller Soemmerring’s gazelles, graceful antelope native to Africa. Feeding stations are located throughout, with low feeders containing tasty herbivore pellets lining the front of the exhibit, and much higher ones with leafy acacia branches dangling enticingly in the middle. At either location, it’s so interesting to watch a giraffe wrap its long, dark tongue around its food.",
+            "fact": "A giraffe's heart weights about 25 pounds.",
+            "Scientific name": "Giraffa camelopardalis"
+        },
+
+        {
+            "name": "HARPY EAGLE",
+            "shortDescription": "The harpy eagle is legendary, although few people have seen one in the wild.",
+            "description": "The harpy eagle is legendary, although few people have seen one in the wild. Named after harpies of Greek mythology, this dark gray bird of prey has a very distinctive look, with feathers atop its head that fan into a bold crest when the bird feels threatened. Some smaller gray feathers create a facial disk that may focus sound waves to improve the bird’s hearing, similar to owls. The harpy eagle's legs can be as thick as a small child's wrist, and its curved back talons are larger than grizzly bear claws! The harpy may not be the largest bird of prey (that title belongs to the Andean condor), but this extraordinary creature is the heaviest and most powerful of birds. View our harpy eagle and other raptors—the Steller’s sea-eagle, Andean condor, and ornate hawk-eagle—along the Eagle Trail.",
+            "fact": "Harpy eagles are the largest eagle in the Americas, with a wingspan of up to six and a half feet wide, and are considered the most powerful raptors in the Amazon.",
+            "Scientific name": "Harpia harpyja"
+        },
+
+        {
+            "name": "JAGUAR",
+            "shortDescription": "Jaguars are built for life in the tropical rain forest, with muscular limbs and large paws to climb trees, pad along the forest floor, and even swim in rivers and streams.",
+            "description": "Sleek, powerful, and elusive, jaguars stalk the Americas and are revered by all who share their realm. Their mesmerizing gaze and hunting prowess have earned them a prominent place in mythology and legend. Jaguars are pretty cool cats! Jaguars are built for life in the tropical rain forest, with muscular limbs and large paws to climb trees, pad along the forest floor, and even swim in rivers and streams. They enjoy a good dip and are strong swimmers. In fact, they typically live near water and have a taste for aquatic creatures. They can also survive in other habitats, too, from grasslands to deserts. Our jaguars can prowl a marshy wetland habitat with rocks, trees, large branches, and a stream that flows into a large pond—where the cat might catch some fish. There’s a statue of a famous cat relative here—the saber-toothed cat—for kids to climb on.",
+            "fact": "They have a mighty name. The word 'jaguar' comes from the indigenous word 'yaguar', which means 'he who kills with one leap'",
+            "Scientific name": "Panthera onca"
+        },
+
+        {
+            "name": "KOALA",
+            "shortDescription": "The San Diego Zoo has the largest koala colony—as well as the most successful koala breeding program—outside of Australia.",
+            "description": "We never tire of talking about koalas at the San Diego Zoo, ever since we welcomed our first pair, Snugglepot and Cuddlepie, back in 1925. Since then, we have become famous for having the largest koala colony as well as the most successful koala breeding program outside of Australia. Our koalas can be seen from walkways around a Queenslander-style “house” that serves as our koala care center, where you can see keepers preparing eucalyptus browse for the koalas. Because male koalas can be territorial, they have their own perches in one area, while the more social females and their babies, called joeys, share another area. The elevated walkways bring you to eye level with the koalas as they perch in their forest of eucalyptus. Human children can practice their koala-climbing skills on a play structure that features life-size koala sculptures.",
+            "fact": "Koalas often return to trees they consider their territory.",
+            "Scientific name": "Phascolarctos cinereus"
+        },
+
+        {
+            "name": "PENGUIN",
+            "shortDescription": "Capable of reaching speeds of 15 miles per hour when swimming after prey (schooling fish, like sardines and anchovies), penguins also have staying power—they can remain underwater for more than two minutes!",
+            "description": "Whether it’s because of their comical gait, dapper tuxedo-like coloring, or even the males’ legendary parenting skills, the appeal of penguins is undeniable. Guests can see our African penguins—native to the waters and shorelines of southern Africa—at the big, new Dan and Vi McKinney Penguin Habitat at Conrad Prebys Africa Rocks. The spacious Cape Fynbos includes a cobblestone beach, nesting area, and rockwork that mimics the granite boulders found at Boulders Beach in South Africa—along with a 200,000-gallon pool with depths up to 13 feet, and underwater viewing. Penguins move leisurely on land, where they nest and rest, but they are nimble and swift in the water. Capable of reaching speeds of 15 miles per hour when swimming after prey (schooling fish, like sardines and anchovies), penguins also have staying power—they can remain underwater for more than two minutes! A penguin’s characteristic black-and-white coloration helps camouflage the bird from ocean predators. When viewed from above, its black back blends into the dark, deeper ocean waters; and from below, its white belly matches the bright, sunlit surface. Be sure to step right up to the underwater viewing area when you visit our penguins—they seem to enjoy interacting with guests through the windows!",
+            "fact": "African penguins are also sometimes called jackass penguins, because one of their vocalizations sounds like a braying donkey.",
+            "Scientific name": "Spheniscidae"
+        },
+
+        {
+            "name": "POLAR BEAR",
+            "shortDescription": "Polar bears are right at home at the San Diego Zoo's Conrad Prebys Polar Bear Plunge, where every day is an Arctic summer day.",
+            "description": "At first thought, a polar bear in sunny San Diego seems curiously out of place. But at the Zoo, you’ll discover that polar bears are right at home, and every day is an Arctic summer day. The focal point of the Conrad Prebys Polar Bear Plunge is, naturally, the pool. From the underwater viewing room, you can see how agile and playful these Arctic bruins really are. In fact, they’re known to swim right up to the glass to check out all the humans on display. Other interactive elements at the Plunge include life-size polar bear statues and a polar bear den to crawl through.",
+            "fact": "Under their white fur, polar bears have black skin.",
+            "Scientific name": "Ursus maritimus"
+        },
+
+        {
+            "name": "RED PANDA",
+            "shortDescription": "The red panda’s reddish coat and white face mask offer camouflage among the red moss and white lichen that cover the trees of its bamboo forest home.",
+            "description": "Although red pandas like to eat bamboo and live in China’s bamboo forests with giant pandas, don’t let their name fool you. Formerly known as lesser pandas, DNA studies show that red pandas represent a unique family that diverged from the rest of the carnivore order, so they are now placed in their own unique family: Ailuridae. The Chinese name for the red panda is hun-ho, meaning fire fox. The red panda’s reddish coat and white face mask offer camouflage among the red moss and white lichen that cover the trees of its bamboo forest home. San Diego Zoo Global supports the Red Panda Network, a nonprofit organization that identifies unprotected red panda habitat and trains “forest guardians” to conduct awareness-building workshops on red pandas at local villages and work with villagers to establish new protected areas. Forest guardians also continue baseline research and monitoring of red panda populations",
+            "fact": "A typical panda eats half the day.",
+            "Scientific name": "Ailurus fulgens"
+        }
+    ]
+}

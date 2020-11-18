@@ -5,6 +5,7 @@ import TopNavigation from "components/TopNavigation";
 import Switch from "react-bootstrap/esm/Switch";
 import EmptyPage from "components/EmptyPage";
 import {useUser} from "contexts/UserContext";
+import AnimalPage from "pages/AnimalsPage/components/AnimalPage"
 import Spinner from "components/Spinner";
 import RegisterPage from "pages/RegisterPage";
 import {MdClose} from "react-icons/md";
@@ -30,7 +31,10 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/animals">
+        <Route path="/animals/:id">
+          <AnimalPage />
+        </Route>
+        <Route exact path="/animals">
           <AnimalsPage user={user} />
         </Route>
         <Route path="/blog">

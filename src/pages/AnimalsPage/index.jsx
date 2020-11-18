@@ -3,6 +3,7 @@ import {Route, withRouter, Redirect, useLocation} from "react-router-dom";
 import {BsChevronDoubleDown} from "react-icons/bs";
 import PostForm from "pages/AnimalsPage/components/PostForm";
 import AnimalsList from "pages/AnimalsPage/components/AnimalsList";
+
 import Spinner from "components/Spinner";
 import {useAnimals, loadAnimals} from "contexts/AnimalsContext";
 
@@ -13,7 +14,6 @@ const AnimalsPage = props => {
   useEffect(() => {
     loadAnimals(dispatch);
   }, [dispatch]);
-
   const cols = location.pathname === "/animals" ? "col" : "col-md-6";
 
   return (
@@ -41,7 +41,6 @@ const AnimalsPage = props => {
             </Route>
           </div>
         ) : (
-          // <AddBtn text="Add Card" handleClick={handleClick} />
           <Redirect to="/animals" />
         )}
         <div className={cols}>

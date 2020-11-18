@@ -7,16 +7,19 @@ import {users} from "api";
 const RegisterPage = ({setMessage}) => {
   const history = useHistory();
 
-  const submit = user =>
-    users.create(user).then(() => {
+  const submit = ({email, password}) => {
+    users.create({email, password}).then(() => {
       setMessage("User has created");
       history.push("/login");
     });
+  };
 
   return (
-    <div className="row">
-      <div className="col-md-8">
-        <RegisterForm submit={submit} />
+    <div className="container">
+      <div className="row justify-content-center mt-5">
+        <div className="col-md-4">
+          <RegisterForm submit={submit} />
+        </div>
       </div>
     </div>
   );

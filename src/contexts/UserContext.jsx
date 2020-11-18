@@ -1,4 +1,6 @@
 import React, {createContext, useContext} from "react";
+import jwtDecode from "jwt-decode";
+import axios from "axios"
 
 import {setAuthorizationHeader} from "api";
 
@@ -25,12 +27,13 @@ const UserContext = createContext();
 
 export const UserProvider = ({children}) => {
   const [user, dispatch] = React.useReducer(reducer, initState);
+ 
   React.useEffect(() => {
     if (localStorage.animalsToken) {
       dispatch({
         type: "setUser",
         token: localStorage.animalsToken,
-        role: localStorage.animalsToken.user.role,
+        role: "user",
       });
       setAuthorizationHeader(localStorage.animalsToken);
     }
@@ -49,11 +52,28 @@ export function useUser() {
 
 export const login = (dispatch, token) => {
   console.log("token", token)
-  console.log("dispatch", dispatch)
-  dispatch({type: "login", token, role: token.user.role});
-  localStorage.animalsToken = token;
+  dispatch({type: "login", token, role: "user"});
+  localStorage.setItem("animalsToken", token)
   setAuthorizationHeader(token);
 };
+
+// export const login = ({email, password}) => {
+//   return axios
+//     .post("http://localhost:3001/auth", {
+//       email,
+//       password,
+//     })
+//     .then((response) => {
+//       console.log(response.data)
+//       if (response.data.accessToken) {
+//         localStorage.setItem("user", JSON.stringify(response.data));
+       
+//       }
+
+//       return response.data;
+//     });
+// };
+
 
 export const logout = dispatch => {
   dispatch({type: "logout"});

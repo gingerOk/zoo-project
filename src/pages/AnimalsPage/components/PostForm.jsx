@@ -23,6 +23,7 @@ const PostForm = () => {
   const history = useHistory();
   const photoRef = useRef();
   const {id} = useParams();
+  
   useEffect(() => {
     const animal = _find(state.animals, {id}) || {};
     if (animal.id && animal.id !== data.id) {

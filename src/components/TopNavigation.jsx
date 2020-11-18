@@ -2,9 +2,18 @@ import {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {useUser, logout} from "contexts/UserContext";
 import {FaSignOutAlt} from "react-icons/fa";
+import {FiPlus} from "react-icons/fi";
 
 const TopNavigation = () => {
-  const [user, dispatch] = useUser();
+ const [user, dispatch] = useUser();
+
+  // const user = {
+  //   email: "apt@com.ua",
+  //   password: "teddy",
+  //   id: "2",
+  //   token: true,
+  //   role: "admin",
+  // };
   const [showNav, setShowNav] = useState(false);
   const isAdmin = user.token && user.role === "admin";
   const isAuth = !!user.token;
@@ -38,15 +47,19 @@ const TopNavigation = () => {
               Blog
             </NavLink>
           </li>
-          <li className="nav-item mx-2">
-            <NavLink exact to="/animals/new" className="nav-link">
-              Add new animal
-            </NavLink>
-          </li>
+          {isAdmin ? (
+            <li className="nav-item mx-2">
+              <NavLink exact to="/animals/new" className="nav-link">
+                <FiPlus /> Animal
+              </NavLink>
+            </li>
+          ) : (
+            ""
+          )}
         </ul>
         <ul className="navbar-nav my-2 my-lg-0">
           {isAuth ? (
-            <span onClick={() => logout(dispatch)} className="nav-item">
+            <span onClick={() => logout()} className="nav-item">
               <FaSignOutAlt /> Logout
             </span>
           ) : (

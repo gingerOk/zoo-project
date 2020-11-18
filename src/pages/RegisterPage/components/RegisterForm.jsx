@@ -47,10 +47,10 @@ const RegisterForm = props => {
   };
   return (
     <form
-      className={`${loading ? "spinner-border" : ""}`}
+      className={`"form-signin" ${loading ? "spinner-border" : ""}`}
       onSubmit={handleSubmit}
     >
-      <h1 className="h3 mb-3 font-weight-normal">Please signup yourself</h1>
+      <h1 className="mt-2 text-center alert alert-dark">Signup</h1>
       <div className={`form-group ${errors.email ? "alert-danger" : ""}`}>
         <label htmlFor="inputEmail">
           Email address

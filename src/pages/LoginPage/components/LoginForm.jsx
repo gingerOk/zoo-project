@@ -27,9 +27,10 @@ const LoginForm = props => {
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
       setLoading(true);
-      console.log(data)
+      
       try {
         await props.submit(data);
+        console.log(data)
         setLoading(false);
       } catch (error) {
         setLoading(false);

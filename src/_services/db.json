@@ -31,11 +31,7 @@
     {
       "name": "Artic Fox",
       "id": "rtcfx123",
-      "imageLink": "/img/artic_fox.jpg",
-      "shortDescription": "A small, round body with thick fur and a fluffy tail help the Arctic fox survive its cold, harsh habitat.",
-      "description": "A small, round body with thick fur and a cute, fluffy tail help the Arctic fox survive its cold, harsh habitat. Even the bottom of its paws has hair to give the fox good traction as it races across icy ground. But for an Arctic fox, the tail, also called a 'brush,' is extra useful, since the fox curls it around the face like a scarf when the frigid winds blow. An Arctic fox’s fur changes colors with the seasons of the year. In winter, it is white so that it blends in with the snow. During the spring, the fox sheds its winter coat, revealing gray fur underneath.",
-      "fact": "Most arctic foxes turn white in winter, but some have brownish blue fur. In summer, arctic foxes shed their winter coats for brown and cream fur. Arctic foxes have small ears, short muzzles, and thick fur to minimize heat loss. In winter, arctic foxes range over huge areas seeking rodents or mammal carcasses",
-      "Scientific name": "Vulpes lagopus"
+      "imageLink": "/img/artic_fox.jpg"
     },
     {
       "name": "Koala",
@@ -59,5 +55,11 @@
       "imageLink": "/img/cheetah.jpg",
       "fact": "Cheetahs are the only big cats that can't roar."
     }
+  ],
+  "users": [
+    
+  ],
+  "auth": [
+  
   ]
 }
