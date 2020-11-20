@@ -15,7 +15,6 @@ const AnimalsPage = props => {
     loadAnimals(dispatch);
   }, [dispatch]);
   const cols = location.pathname === "/animals" ? "col" : "col-md-6";
-
   return (
     <>
       <div className="row">
@@ -31,7 +30,7 @@ const AnimalsPage = props => {
         </div>
       </div>
       <div className="row">
-        {props.user.token && props.user.role === "admin" ? (
+        {props.user.token && props.user.role === "admin" ? ( 
           <div className="col-md-5">
             <Route path="/animals/new">
               <PostForm />

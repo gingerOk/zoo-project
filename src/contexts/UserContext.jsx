@@ -57,24 +57,6 @@ export const login = (dispatch, token) => {
   setAuthorizationHeader(token);
 };
 
-// export const login = ({email, password}) => {
-//   return axios
-//     .post("http://localhost:3001/auth", {
-//       email,
-//       password,
-//     })
-//     .then((response) => {
-//       console.log(response.data)
-//       if (response.data.accessToken) {
-//         localStorage.setItem("user", JSON.stringify(response.data));
-       
-//       }
-
-//       return response.data;
-//     });
-// };
-
-
 export const logout = dispatch => {
   dispatch({type: "logout"});
   setAuthorizationHeader();

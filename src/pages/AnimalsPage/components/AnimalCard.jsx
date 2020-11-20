@@ -5,7 +5,7 @@ import AnimalCardBtns from "pages/AnimalsPage/components/AnimalCardBtns";
 const AnimalCard = ({animal}) => {
  const user = {
    token: null,
-   role: "user"
+   role: "admin"
  }
   return (
     <div className="card border-0">

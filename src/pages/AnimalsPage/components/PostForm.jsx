@@ -26,10 +26,10 @@ const PostForm = () => {
   
   useEffect(() => {
     const animal = _find(state.animals, {id}) || {};
+    console.log(state.animals)
     if (animal.id && animal.id !== data.id) {
       setData(animal);
     }
-
     if (!animal.id && data.id) {
       setData(initialData);
     }
@@ -60,6 +60,8 @@ const PostForm = () => {
     e.preventDefault();
     const errors = validate(data);
     setErrors(errors);
+    console.log(errors)
+    console.log(data)
     if (Object.keys(errors).length === 0) {
       setLoading(true);
       saveAnimal(dispatch, data)
