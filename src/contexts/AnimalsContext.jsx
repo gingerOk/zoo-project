@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useReducer} from "react";
 import {prop, sort, ascend} from "ramda";
-import {animals as animalsApi} from "../api";
+import {animals as animalsApi} from "api";
 
 const AnimalCoxtext = createContext();
 

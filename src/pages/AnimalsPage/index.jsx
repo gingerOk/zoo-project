@@ -13,6 +13,7 @@ const AnimalsPage = props => {
 
   useEffect(() => {
     loadAnimals(dispatch);
+    console.log(animals)
   }, [dispatch]);
   const cols = location.pathname === "/animals" ? "col" : "col-md-6";
   return (
@@ -30,7 +31,7 @@ const AnimalsPage = props => {
         </div>
       </div>
       <div className="row">
-        {props.user.token && props.user.role === "admin" ? ( 
+        {/* {props.user.token && props.user.role === "admin" ? ( 
           <div className="col-md-5">
             <Route path="/animals/new">
               <PostForm />
@@ -41,7 +42,7 @@ const AnimalsPage = props => {
           </div>
         ) : (
           <Redirect to="/animals" />
-        )}
+        )} */}
         <div className={cols}>
           {loading ? <Spinner /> : <AnimalsList animals={animals} />}
         </div>

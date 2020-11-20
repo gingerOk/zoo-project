@@ -2,7 +2,6 @@ const fs = require('fs')
 const bodyParser = require('body-parser')
 const jsonServer = require('json-server')
 const jwt = require('jsonwebtoken');
-const { animals } = require('api');
 
 const server = jsonServer.create();
 const router = jsonServer.router('./db.json');
@@ -32,14 +31,10 @@ function isAuthenticated(email, password){
   return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
 }
 
-// Check if the animal exists in database
-function isExist(name){
-  return animalsdb.animals.findIndex(animal => animal.name === name) !== -1
-}
 //Fetch animals from animals.json
 server.get('/animals', (req, res) => {
   console.log("animals endpoint called; request body:");
-  fs.readFile("src/_services/animals.json", (err, data) => {  
+  fs.readFile("src/_services/animals.json", (err, data) => { 
     if (err) {
       const status = 401
       const message = err
@@ -60,7 +55,7 @@ server.post('/animals', (req, res) => {
 
   if(animalsdb.animals.findIndex(item => item.name === animal.name) !== -1){
     const status = 401;
-    const message = 'Email and Password already exist';
+    const message = 'Such an animal already exists';
     res.status(status).json({status, message});
     return
   }
