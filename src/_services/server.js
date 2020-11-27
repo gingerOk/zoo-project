@@ -28,6 +28,7 @@ function verifyToken(token){
 
 // Check if the user exists in database
 function isAuthenticated(email, password){
+  console.log(userdb.users)
   return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
 }
 
@@ -121,6 +122,7 @@ server.post('/auth/register', (req, res) => {
     console.log("register endpoint called; request body:");
     console.log(req.body);
     const {email, password} = req.body;
+    const newUser = {email: email, password: password, role: "user"}
   
     if(isAuthenticated(email, password) === true) {
       const status = 401;
@@ -142,9 +144,8 @@ server.post('/auth/register', (req, res) => {
   
       // Get the id of last user
       var last_item_id = newData.users.length > 1 ? newData.users[newData.users.length-1].id : 0;
-  
       //Add new user
-      newData.users.push({id: last_item_id + 1, email: email, password: password}); //add some data
+      newData.users.push({...newUser, id: last_item_id + 1}); //add some data
       var writeData = fs.writeFile("src/_services/users.json", JSON.stringify(newData), (err, res) => {  // WRITE
           if (err) {
             const status = 401
@@ -156,7 +157,8 @@ server.post('/auth/register', (req, res) => {
   });
   
   // Create token for new user
-  const access_token = createToken({email, password})
+  //const access_token = jwt.sign({ user: {email: email, role: 'user' } }, process.env.JWT_SECRET);
+  const access_token = createToken(newUser)
   console.log("Access Token:" + access_token);
   res.status(200).json({access_token})
 })
@@ -164,16 +166,16 @@ server.post('/auth/register', (req, res) => {
 // Login to one of the users from ./users.json
   server.post('/auth/login', (req, res) => {
     console.log("login endpoint called; request body:");
-  console.log(req.body);
-    const {email, password} = req.body
-    if (!isAuthenticated(email, password)) {
-      console.log(isAuthenticated({email, password}))
-      const status = 401
-      const message = 'Incorrect email or password'
-      res.status(status).json({status, message})
-      return
-    }
-    const access_token = createToken({email, password})
+    console.log(req.body);
+  if (!isAuthenticated(req.body.email, req.body.password)) {
+    const status = 401
+    const message = 'Incorrect email or password'
+    res.status(status).json({status, message})
+    return
+  }
+    const currentUser = userdb.users.filter(user => req.body.email === user.email && req.body.password === user.password);
+    const [{email, password, role}] = currentUser;
+    const access_token = createToken({email, password, role})
     console.log("Access Token:" + access_token);
     res.status(200).json({access_token})
   })

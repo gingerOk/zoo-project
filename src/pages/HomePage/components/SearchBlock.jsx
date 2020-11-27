@@ -1,20 +1,20 @@
-import React, {useState} from "react";
-import animals from "data";
-import SearchShowBlock from "components/SearchShowBlock";
+import React, {useState, useEffect} from "react";
+import SearchShowBlock from "pages/HomePage/components/SearchShowBlock";
 
-const SearchBlock = () => {
+const SearchBlock = ({animals}) => {
   const [searchItem, setSearchItem] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const handleChange = e => {
     setSearchItem(e.target.value);
   };
-  React.useEffect(() => {
+  
+  useEffect(() => {
     const results = animals.filter(person =>
       person.name.toLowerCase().includes(searchItem),
     );
     setSearchResults(results);
-  }, [searchItem]);
+  }, [animals, searchItem]);
 
   return (
     <div className="search_block">

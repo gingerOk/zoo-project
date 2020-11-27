@@ -1,6 +1,5 @@
 import React, {createContext, useContext} from "react";
 import jwtDecode from "jwt-decode";
-import axios from "axios"
 
 import {setAuthorizationHeader} from "api";
 
@@ -33,7 +32,7 @@ export const UserProvider = ({children}) => {
       dispatch({
         type: "setUser",
         token: localStorage.animalsToken,
-        role: "user",
+        role: jwtDecode(localStorage.animalsToken).role,
       });
       setAuthorizationHeader(localStorage.animalsToken);
     }
@@ -51,8 +50,7 @@ export function useUser() {
 }
 
 export const login = (dispatch, token) => {
-  console.log("token", token)
-  dispatch({type: "login", token, role: "user"});
+  dispatch({type: "login", token, role: jwtDecode(token).role});
   localStorage.setItem("animalsToken", token)
   setAuthorizationHeader(token);
 };

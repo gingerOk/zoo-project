@@ -2,10 +2,9 @@ import {useEffect, useState} from "react";
 import animals from "data";
 import {BsChevronDoubleDown} from "react-icons/bs"
 
-const FactsBlock = () => {
+const FactsBlock = ({creatures}) => {
   const [animal, setAnimal] = useState(animals[0]);
   const [refreshInterval, setRefreshInterval] = useState(5000);
-
   const randomAnimal = () => {
     return {...animals[Math.floor(Math.random() * animals.length)]};
   };

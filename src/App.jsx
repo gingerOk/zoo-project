@@ -31,10 +31,10 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/animals/:id">
+        {/* <Route path="/animals/:id">
           <AnimalPage />
-        </Route>
-        <Route exact path="/animals">
+        </Route> */}
+        <Route path="/animals">
           <AnimalsPage user={user} />
         </Route>
         <Route path="/blog">

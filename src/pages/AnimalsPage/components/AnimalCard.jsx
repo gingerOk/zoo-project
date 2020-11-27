@@ -1,12 +1,12 @@
 import React, {memo} from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
+import {useUser} from "contexts/UserContext"
 import AnimalCardBtns from "pages/AnimalsPage/components/AnimalCardBtns";
+
+
 const AnimalCard = ({animal}) => {
- const user = {
-   token: null,
-   role: "admin"
- }
+  const [user] = useUser();
   return (
     <div className="card border-0">
       <Link to={`/animals/${animal.id}`} className="text-decor-none">
