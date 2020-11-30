@@ -59,8 +59,6 @@ const PostForm = () => {
     e.preventDefault();
     const errors = validate(data);
     setErrors(errors);
-    console.log(errors)
-    console.log(data)
     if (Object.keys(errors).length === 0) {
       setLoading(true);
       saveAnimal(dispatch, data)
@@ -135,12 +133,12 @@ const PostForm = () => {
               </div>
             </div>
             <div className="col-6">
-              {/* <ImageLoader
+              <ImageLoader
                 src={data.img}
                 fallbackImg="http://via.placeholder.com/250x250"
                 className="img_form"
                 alt={data.name}
-              /> */}
+              />
             </div>
           </div>
           {/*  img field END */}

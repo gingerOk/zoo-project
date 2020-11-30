@@ -29,6 +29,10 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.image_height {
+  height: 60vh;
+}
 .image_block {
   height: 100%;
   overflow: hidden;
@@ -36,13 +40,11 @@ body {
 .image_block img {  
   width: 100%;
   overflow: hidden;
-  
   }
 
   .image-header-text {
     position: absolute;
-    right: 10%;
-    bottom: 48%;
+    bottom: 12%;
     z-index: 2;
     color: white;
     border-bottom: 3px solid purple;
@@ -119,4 +121,8 @@ text-align: center;
 .img_form {
   width: 250px;
   height: 250px;
+}
+
+.main-color {
+  background-color: #F3F8FB;
 }

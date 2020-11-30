@@ -12,19 +12,18 @@ const HomePage = () => {
     loadAnimals(dispatch);
   }, [dispatch]);
 
-  console.log(animals)
   return (
-    // <div>
-    //   {loading ? (
-    //     <Spinner />
-    //   ) : (
+    <>
+      <HeaderImage />
+      {loading ? (
+        <Spinner />
+      ) : (
         <>
-          <HeaderImage />
-          <FactsBlock creatures={animals}/>
+          <FactsBlock creatures={animals} />
           <SearchBlock animals={animals} />
         </>
-    //   )}
-    // </div>
+      )}
+    </>
   );
 };
 

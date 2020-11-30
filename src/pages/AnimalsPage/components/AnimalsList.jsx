@@ -6,7 +6,7 @@ const AnimalsList = ({animals}) => {
   return (
     <div className="row my-5 justify-content-center px-2">
       {animals.map(item => (
-        <div className="col-md-4 col px-lg-5 my-lg-3" key={item.id}>
+        <div className="col-md-4 px-lg-5 my-lg-3" key={item.id}>
           <AnimalCard key={item.id} animal={item} />
         </div>
       ))}
