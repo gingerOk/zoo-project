@@ -4,9 +4,9 @@ import AnimalCard from "pages/AnimalsPage/components/AnimalCard";
 
 const AnimalsList = ({animals}) => {
   return (
-    <div className="row my-5 justify-content-center px-2">
+    <div className="row my-5 mx-xl-2 justify-content-center px-2">
       {animals.map(item => (
-        <div className="col-md-4 px-lg-5 my-lg-3" key={item.id}>
+        <div className="col-xl-4 col-lg-6 col-12 my-lg-3" key={item.id}>
           <AnimalCard key={item.id} animal={item} />
         </div>
       ))}

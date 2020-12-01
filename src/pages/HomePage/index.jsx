@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import HeaderImage from "pages/HomePage/components/HeaderImage";
 import SearchBlock from "pages/HomePage/components/SearchBlock";
-import FactsBlock from "pages/HomePage/components/FactsBlock";
+import FactsBlock from "pages/HomePage/components/FactsBlockWrapper";
 import {useAnimals, loadAnimals} from "contexts/AnimalsContext";
 import Spinner from "components/Spinner";
 
@@ -19,7 +19,7 @@ const HomePage = () => {
         <Spinner />
       ) : (
         <>
-          <FactsBlock creatures={animals} />
+          <FactsBlock animals={animals} />
           <SearchBlock animals={animals} />
         </>
       )}

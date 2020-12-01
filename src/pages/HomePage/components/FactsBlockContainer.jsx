@@ -1,32 +1,8 @@
-import {useEffect, useState} from "react";
-import animals from "data";
 import {BsChevronDoubleDown} from "react-icons/bs"
 
-const FactsBlock = ({creatures}) => {
-  const [animal, setAnimal] = useState(animals[0]);
-  const [refreshInterval, setRefreshInterval] = useState(5000);
-  const randomAnimal = () => {
-    return {...animals[Math.floor(Math.random() * animals.length)]};
-  };
-  const pickAnimal = () => {
-    const item = randomAnimal();
-    if (item.fact) {
-      setAnimal(item);
-      setRefreshInterval(5000);
-    } else {
-      setRefreshInterval(10);
-    }
-  };
-
-  useEffect(() => {
-    if (refreshInterval && refreshInterval > 0) {
-      const interval = setInterval(pickAnimal, refreshInterval);
-      return () => clearInterval(interval);
-    }
-  });
-
-  return (
-    <>
+const FactsBlockContainer = ({animal}) => {
+    return (
+        <>
       <div className="container mb-5">
         <div className="row">
           <div className="col text-center">
@@ -38,10 +14,9 @@ const FactsBlock = ({creatures}) => {
             <div className="header_icon m-5">
               <BsChevronDoubleDown size={36}/>
             </div>
-
             <div
               className="card text-center text-white border-0 mb-3 mx-auto d-block"
-              style={{height: 600, width: 700}}
+              style={{maxWidth: 800}}
             >
               <div className="position-relative card_image">
                 <div className="overflow-hidden image_block">
@@ -60,7 +35,7 @@ const FactsBlock = ({creatures}) => {
         </div>
       </div>
     </>
-  );
-};
+    )
+}
 
-export default FactsBlock;
+export default FactsBlockContainer

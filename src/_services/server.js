@@ -144,7 +144,7 @@ server.post('/auth/register', (req, res) => {
       var last_item_id = newData.users.length > 1 ? newData.users[newData.users.length-1].id : 0;
       //Add new user
       newData.users.push({...newUser, id: last_item_id + 1}); //add some data
-      var writeData = fs.writeFile("src/_services/users.json", JSON.stringify(newData), (err, res) => {  // WRITE
+      fs.writeFile("src/_services/users.json", JSON.stringify(newData), (err, res) => {  // WRITE
           if (err) {
             const status = 401
             const message = err

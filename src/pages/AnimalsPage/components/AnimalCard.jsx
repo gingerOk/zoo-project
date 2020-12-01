@@ -13,7 +13,7 @@ const AnimalCard = ({animal}) => {
         <img
           src={animal.imageLink}
           alt={animal.name}
-          className="card-img-top animal-card"
+          className="card-img-top"
         />
         <div className="card-body">
           <h5 className="card-title text-uppercase text-dark">{animal.name}</h5>

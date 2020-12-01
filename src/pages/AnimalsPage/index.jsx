@@ -4,7 +4,6 @@ import {BsChevronDoubleDown} from "react-icons/bs";
 import PostForm from "pages/AnimalsPage/components/PostForm";
 import AnimalsList from "pages/AnimalsPage/components/AnimalsList";
 import AnimalPage from "pages/AnimalsPage/components/AnimalPage";
-
 import Spinner from "components/Spinner";
 import {useAnimals, loadAnimals} from "contexts/AnimalsContext";
 
@@ -16,7 +15,7 @@ const AnimalsPage = props => {
     loadAnimals(dispatch);
   }, [dispatch]);
 
-  const cols = location.pathname === "/animals" ? "col" : "col-md-6";
+  const cols = location.pathname === "/animals" ? "col" : "col-md-4";
   return (
     <div>
       <div className="row">
@@ -33,7 +32,7 @@ const AnimalsPage = props => {
       </div>
       <div className="row">
         {location.pathname !== "/animals" ? (
-          <div className="col-md-6">
+          <div className="col-md-8">
             <Route path="/animals/:id">
               <AnimalPage />
             </Route>
@@ -42,7 +41,7 @@ const AnimalsPage = props => {
           ""
         )}
         {props.user.token && props.user.role === "user" ? (
-          <div className={cols !== "col" ? "col-md-5" : ""}>
+          <div className={cols !== "col" ? "col-md-7" : ""}>
             <Route path="/animals/new">
               <PostForm />
             </Route>
