@@ -8,7 +8,7 @@ const SearchBlock = ({animals}) => {
   const handleChange = e => {
     setSearchItem(e.target.value);
   };
-  
+
   useEffect(() => {
     const results = animals.filter(person =>
       person.name.toLowerCase().includes(searchItem),
@@ -26,7 +26,7 @@ const SearchBlock = ({animals}) => {
             </div>
           </div>
         </div>
-        <div className="col text-center px-0">
+        <div className="col text-center px-0 pt-4">
           <h2>Animal Facts & Pictures</h2>
           <input
             type="text"

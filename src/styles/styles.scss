@@ -1,0 +1,51 @@
+@import './arrows.scss';
+@import './searchblock.scss';
+@import './searchInput.scss';
+@import './navbar.scss';
+
+
+* {
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.header_image {
+  background-image: url('./header.jpg');
+}
+.custom-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+.custom-switch {
+    padding-left: 0 !important;
+  }
+
+.header_image {
+    height: 85vh;
+}
+
+.image_block {
+    height: 100%;
+    overflow: hidden;
+}
+  
+.image_block img {  
+    width: 100%;
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .hover-text-decor-none:hover {
+    text-decoration: none;
+}

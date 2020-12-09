@@ -20,7 +20,7 @@ const HomePage = () => {
       ) : (
         <>
           <FactsBlock animals={animals} />
-          <SearchBlock animals={animals} />
+          {/* <SearchBlock animals={animals} /> */}
         </>
       )}
     </>

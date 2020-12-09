@@ -18,7 +18,7 @@ const SearchShowBlock = ({searchResults}) => {
                   </div>
                   <div className="col ml-md-auto">
                     <h4>{item.name}</h4>
-                    <span>{item ? item["Scientific name"] : ""}</span>
+                    <span>{item["Scientific name"]}</span>
                   </div>
                 </div>
               </Link>

@@ -1,0 +1,21 @@
+.searchBlock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    z-index: 2;
+    padding-bottom: 50px;
+
+}
+.closeBtn {
+    margin: 0 0 48px;
+}
+.closeIcon {
+    position:absolute;
+   top:0;
+   right: 10px;
+   margin-bottom: 20px;
+   font-size: 28px;
+}

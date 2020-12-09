@@ -1,8 +1,11 @@
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {useUser, logout} from "contexts/UserContext";
+import Search from "components/Search";
 import {FaSignOutAlt} from "react-icons/fa";
 import {FiPlus} from "react-icons/fi";
+import {FaUserPlus} from "react-icons/fa";
+import {FiLogIn} from "react-icons/fi";
 
 const TopNavigation = () => {
   const [user, dispatch] = useUser();
@@ -15,62 +18,67 @@ const TopNavigation = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light py-0">
-      <button className="navbar-toggler" type="button" onClick={toggleNav}>
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className={`collapse navbar-collapse ${showNav ? "show" : "hide"}`}>
-        <NavLink exact to="/" className="navbar-brand mx-4">
-          <img src="/img/logo.jpg" alt="logo" style={{width: 70}} />
+    <header className={showNav ? "clicked" : ""}>
+      <div className="logo-brand">
+        <NavLink to="/" className="">
+          Animals & Facts
         </NavLink>
-        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li className="nav-item active mx-2">
-            <NavLink exact to="/" className="nav-link">
-              Home
-            </NavLink>
-          </li>
-          <li className="nav-item mx-2">
-            <NavLink exact to="/animals" className="nav-link">
-              Animals
-            </NavLink>
-          </li>
-          <li className="nav-item mx-2">
-            <NavLink exact to="/blog" className="nav-link">
-              Blog
-            </NavLink>
-          </li>
-          {isAdmin ? (
-            <li className="nav-item mx-2">
-              <NavLink exact to="/animals/new" className="nav-link">
-                <FiPlus /> Animal
+      </div>
+      <div className="nav-modal">
+        <div className="blob"></div>
+        <nav>
+          <ul onClick={toggleNav}>
+            <li>
+              <NavLink exact to="/">
+                HOME
               </NavLink>
             </li>
-          ) : (
-            ""
-          )}
-        </ul>
-        <ul className="navbar-nav my-2 my-lg-0">
-          {isAuth ? (
-            <span onClick={() => logout(dispatch)} className="nav-item">
-              <FaSignOutAlt /> Logout
-            </span>
-          ) : (
-            <>
-              <li className="nav-item mx-2">
-                <NavLink exact to="/register" className="nav-link">
-                  Register
+            <li>
+              <NavLink exact to="/animals">
+                ANIMALS
+              </NavLink>
+            </li>
+            <li>
+              <NavLink exact to="/blog">
+                BLOG
+              </NavLink>
+            </li>
+            {isAdmin ? (
+              <li>
+                <NavLink exact to="/animals/new">
+                  <FiPlus /> Animal
                 </NavLink>
               </li>
-              <li className="nav-item mx-2">
-                <NavLink exact to="/login" className="nav-link">
-                  Login
-                </NavLink>
-              </li>
-            </>
-          )}
-        </ul>
+            ) : (
+              ""
+            )}
+          </ul>
+        </nav>
       </div>
-    </nav>
+      <div className="head" onClick={() => (showNav ? setShowNav(false) : "")}>
+        {isAuth ? (
+          <span onClick={() => logout(dispatch)}>
+            <FaSignOutAlt /> Logout
+          </span>
+        ) : (
+          <span>
+            <NavLink to="/register" className="tile icons">
+              <FaUserPlus />
+            </NavLink>
+            <NavLink to="/login" className="tile icons">
+              <FiLogIn />
+            </NavLink>
+          </span>
+        )}
+        <div className="tile burger" onClick={toggleNav}>
+          <div className="meat">
+            <div className="line one"></div>
+            <div className="line two"></div>
+            <div className="line three"></div>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, {useState, lazy, Suspense} from "react";
+import "styles/styles.scss"
 import {Route} from "react-router-dom";
 import HomePage from "pages/HomePage";
 import TopNavigation from "components/TopNavigation";

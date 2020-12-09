@@ -1,9 +1,8 @@
 import React, {memo} from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
-import {useUser} from "contexts/UserContext"
+import {useUser} from "contexts/UserContext";
 import AnimalCardBtns from "pages/AnimalsPage/components/AnimalCardBtns";
-
 
 const AnimalCard = ({animal}) => {
   const [user] = useUser();

@@ -18,29 +18,32 @@ const AnimalsPage = props => {
   const cols = location.pathname === "/animals" ? "col" : "col-md-4";
   return (
     <div>
-      <div className="row">
-        <div className="col text-center">
-          <div className="header">
-            <h2 className="mt-4">
-              <p>ANIMALS</p>
-            </h2>
-          </div>
-          <div className="header_icon my-4">
-            <BsChevronDoubleDown size={36} />
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        {location.pathname !== "/animals" ? (
-          <div className="col-md-8">
+      {location.pathname !== "/animals" &&
+      !location.pathname.includes("/animals/edit") &&
+      !location.pathname.includes("/animals/new") ? (
+        <div className="row">
+          <div className="col">
             <Route path="/animals/:id">
               <AnimalPage />
             </Route>
           </div>
-        ) : (
-          ""
-        )}
-        {props.user.token && props.user.role === "user" ? (
+        </div>
+      ) : (
+        <div className="row">
+          <div className="col text-center">
+            <div className="header">
+              <h2 className="mt-4">
+                <p>ANIMALS</p>
+              </h2>
+            </div>
+            <div className="header_icon my-4">
+              <BsChevronDoubleDown size={36} />
+            </div>
+          </div>
+        </div>
+      )}
+      <div className="row">
+        {props.user.token && props.user.role === "admin" ? (
           <div className={cols !== "col" ? "col-md-7" : ""}>
             <Route path="/animals/new">
               <PostForm />
@@ -52,9 +55,15 @@ const AnimalsPage = props => {
         ) : (
           <Redirect to="/animals" />
         )}
-        <div className={cols}>
-          {loading ? <Spinner /> : <AnimalsList animals={animals} />}
-        </div>
+        {location.pathname === "/animals" ||
+        location.pathname.includes("/animals/edit") ||
+        location.pathname.includes("/animals/new") ? (
+          <div className={cols}>
+            {loading ? <Spinner /> : <AnimalsList animals={animals} />}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

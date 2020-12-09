@@ -7,6 +7,7 @@ const initialData = {
   id: null,
   name: "",
   imageLink: "",
+  fullImage: "",
   shortDescription: "",
   description: "",
   fact: "",
@@ -30,10 +31,10 @@ const AnimalPage = () => {
   }, [id, data.id, state]);
 
   return (
-    <div className="my-5 mx-lg-3">
+    <div>
       <div className="image_height w-100 px-0">
         <div className="">
-          <img src={data.imageLink} className="w-100" alt="" />
+          <img src={data.fullImage ? data.fullImage : data.imageLink} className="w-100" alt="" />
           <h1 className="display-1 pb-2">{data.name.toUpperCase()}</h1>
         </div>
       </div>
