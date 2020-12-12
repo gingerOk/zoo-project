@@ -10,11 +10,11 @@ const Search = () => {
   const handleClick = () => {
     loadAnimals(dispatch);
     setIsClicked(true);
-    console.log(animals);
   };
   const handleCloseBtn = () => {
     setIsClicked(false);
   };
+
   return (
     <div>
       {isClicked ? (

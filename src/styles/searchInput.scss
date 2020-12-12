@@ -1,13 +1,16 @@
-.searchBlock {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    background-color: #000;
-    z-index: 2;
-    padding-bottom: 50px;
-
+body {
+    position: relative;
+    & .searchBlock {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #000;
+        z-index: 5;
+        padding-bottom: 50px;
+    
+    }
 }
 .closeBtn {
     margin: 0 0 48px;
@@ -18,4 +21,11 @@
    right: 10px;
    margin-bottom: 20px;
    font-size: 28px;
+}
+
+.inputContainer{
+    input:focus {
+        background-color: #d6d6d64b;
+        outline: none;
+    }
 }

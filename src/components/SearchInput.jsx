@@ -6,7 +6,7 @@ const SearchInput = ({searchItem, handleChange}) => {
         placeholder="Search Animal..."
         value={searchItem}
         onChange={handleChange}
-        className="col"
+        className="col rounded-pill py-1"
       />
     </div>
   );

@@ -1,19 +1,38 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {Route, withRouter, Redirect, useLocation} from "react-router-dom";
 import {BsChevronDoubleDown} from "react-icons/bs";
 import PostForm from "pages/AnimalsPage/components/PostForm";
 import AnimalsList from "pages/AnimalsPage/components/AnimalsList";
 import AnimalPage from "pages/AnimalsPage/components/AnimalPage";
 import Spinner from "components/Spinner";
+import SearchInput from "components/SearchInput";
 import {useAnimals, loadAnimals} from "contexts/AnimalsContext";
+import {BsSearch} from "react-icons/bs";
 
 const AnimalsPage = props => {
   const [{animals, loading}, dispatch] = useAnimals();
+  const [results, setResults] = useState([]);
+  const [searchItem, setSearchItem] = useState("");
   const location = useLocation();
 
+  const handleChange = e => {
+    setSearchItem(e.target.value);
+  };
+
   useEffect(() => {
-    loadAnimals(dispatch);
-  }, [dispatch]);
+    if (!searchItem) {
+      loadAnimals(dispatch);
+    }
+  }, [dispatch, searchItem]);
+
+  useEffect(() => {
+    if (searchItem) {
+      const results = animals.filter(person =>
+        person.name.toLowerCase().includes(searchItem),
+      );
+      setResults(results);
+    }
+  }, [animals, searchItem]);
 
   const cols = location.pathname === "/animals" ? "col" : "col-md-4";
   return (
@@ -39,6 +58,19 @@ const AnimalsPage = props => {
             <div className="header_icon my-4">
               <BsChevronDoubleDown size={36} />
             </div>
+            <div className="col-lg-3 d-block mx-auto my-3">
+              <div className="row">
+                <div className="col-1 pr-1">
+                  <BsSearch size={35} />
+                </div>
+                <div className="col-11 pl-0">
+                  <SearchInput
+                    searchItem={searchItem}
+                    handleChange={handleChange}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -59,7 +91,11 @@ const AnimalsPage = props => {
         location.pathname.includes("/animals/edit") ||
         location.pathname.includes("/animals/new") ? (
           <div className={cols}>
-            {loading ? <Spinner /> : <AnimalsList animals={animals} />}
+            {loading ? (
+              <Spinner />
+            ) : (
+              <AnimalsList animals={searchItem ? results : animals} />
+            )}
           </div>
         ) : (
           ""

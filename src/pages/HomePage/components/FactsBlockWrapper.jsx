@@ -9,6 +9,7 @@ const FactsBlock = ({animals}) => {
   useEffect(() => {
     if (animals) {
       setLoading(false);
+      if (animals.length > 0 && !animal) setAnimal(animals[0]);
       const interval = setInterval(function () {
         setAnimal({...animals[Math.floor(Math.random() * animals.length)]});
       }, 5000);

@@ -11,7 +11,7 @@ $backgroundColor: #fff;
 }
 
 header {
-	height: 120px;
+	height: 100px;
 	width: 100%;
 	position: relative;
 	background-color: $backgroundColor;
@@ -21,7 +21,6 @@ header {
 	max-width: 400px;
 	display: block;
 	margin: 0 auto;
-    padding-top: 15px;
     text-align: center;
     
     & a {
@@ -34,7 +33,7 @@ header {
 }
 .head{
 	position: absolute;
-	top: 35px;
+	top: 22px;
     right: 50px;
     z-index: 5;
     
@@ -186,7 +185,8 @@ nav{
         padding-right: 10px;
         position: relative;
         font-size: 36px;
-        & a {
+        cursor: pointer;
+        & a, span {
             color: $menuTextColor;
             &:hover {
                 text-decoration: none;

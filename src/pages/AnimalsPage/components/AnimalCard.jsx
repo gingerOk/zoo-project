@@ -8,7 +8,7 @@ const AnimalCard = ({animal}) => {
   const [user] = useUser();
   return (
     <div className="card border-0">
-      <Link to={`/animals/${animal.id}`} className="text-decor-none">
+      <Link to={`/animals/${animal.id}`} className="hover-text-decor-none">
         <img
           src={animal.imageLink}
           alt={animal.name}

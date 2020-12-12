@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {useUser, logout} from "contexts/UserContext";
-import Search from "components/Search";
 import {FaSignOutAlt} from "react-icons/fa";
 import {FiPlus} from "react-icons/fi";
 import {FaUserPlus} from "react-icons/fa";
@@ -46,7 +45,7 @@ const TopNavigation = () => {
             {isAdmin ? (
               <li>
                 <NavLink exact to="/animals/new">
-                  <FiPlus /> Animal
+                  <FiPlus /> ANIMAL
                 </NavLink>
               </li>
             ) : (

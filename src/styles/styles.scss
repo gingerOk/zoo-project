@@ -1,5 +1,4 @@
 @import './arrows.scss';
-@import './searchblock.scss';
 @import './searchInput.scss';
 @import './navbar.scss';
 
@@ -7,7 +6,7 @@
 * {
   box-sizing: border-box;
 	margin: 0;
-	padding: 0;
+  padding: 0;
 }
 
 .header_image {
@@ -48,4 +47,38 @@
 
   .hover-text-decor-none:hover {
     text-decoration: none;
+}
+
+.card-image{
+  max-width: 800px;
+  max-height: 600px;
+}
+
+.image-block {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-title-custom {
+  background-color: #000;
+  opacity: 0.8;
+  bottom: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 6px;
+}
+
+@media screen and (min-width:700px){
+.animal-name {
+  position: absolute;
+  right: 5%;
+  bottom: 40%;
+  color: #fff;
+  border-bottom: 4px solid purple;
+  padding-bottom: 10px;
+}
+}
+body {
+  overflow-x: hidden;
 }

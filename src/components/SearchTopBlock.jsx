@@ -21,9 +21,9 @@ const SearchTopBlock = ({animals, handleCloseBtn}) => {
   return (
     <div className="searchBlock">
       <div className="closeBtn" onClick={handleCloseBtn}>
-          <div className="closeIcon">
-          <BsX color={'white'}/>
-          </div>
+        <div className="closeIcon">
+          <BsX color={"white"} />
+        </div>
       </div>
       <SearchInput searchItem={searchItem} handleChange={handleChange} />
       {searchItem ? <SearchShowBlock searchResults={searchResults} /> : ""}

@@ -32,13 +32,13 @@ const AnimalPage = () => {
 
   return (
     <div>
-      <div className="image_height w-100 px-0">
-        <div className="">
-          <img src={data.fullImage ? data.fullImage : data.imageLink} className="w-100" alt="" />
-          <h1 className="display-1 pb-2">{data.name.toUpperCase()}</h1>
+      <div className="w-100 px-0">
+        <div className="animal">
+          <img src={data.fullImage ? data.fullImage : data.imageLink} className="w-100 img-fluid" alt="" />
+          <h1 className="display-1 pb-2 animal-name">{data.name.toUpperCase()}</h1>
         </div>
       </div>
-      <div className="container">
+      <div className="container my-5">
         <div className="block">
           <h3 className="display-5">Scientific Name : {data.scientificName}</h3>
         </div>

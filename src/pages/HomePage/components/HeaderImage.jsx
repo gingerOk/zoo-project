@@ -4,9 +4,7 @@ const HeaderImage = () => {
       <div className="image_block">
         <img src="./img/header.jpg" className="img-fluid w-100" alt="" />
       </div>
-      <div className="arrows"></div>
     </div>
-    
   );
 };
 
